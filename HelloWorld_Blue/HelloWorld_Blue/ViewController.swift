@@ -11,7 +11,7 @@ import SnapKit
 class ViewController: UIViewController {
     
     var helloworldLabel: UILabel = {
-        let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 60))
+        let lbl = UILabel(frame: .zero)
         lbl.text = "Hello World!"
         lbl.font = .systemFont(ofSize: 25, weight: UIFont.Weight.medium)
         lbl.textColor = .white
@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(helloworldLabel)
-        self.helloworldLabel.snp.makeConstraints {
-            $0.center.equalTo(self.view)
+        self.helloworldLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
         self.view.backgroundColor = UIColor.blue
         
